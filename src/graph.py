@@ -40,10 +40,6 @@ class Graph(dict):
             if node == target:
                 break
 
-            # XXX: hack
-            if node != source and not node.circulatable:
-                continue
-
             for neighbor_node in self[node]:
                 if neighbor_node not in pque:
                     continue

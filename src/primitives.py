@@ -73,29 +73,3 @@ class Pivot(object):
             position = (0, 0)
         position = Point(*position)
         self.position = position
-
-a_pos = (20, 20)
-a_pivot = Pivot(a_pos, "a_pivot")
-
-e_pos = (200, 20)
-e_pivot = Pivot(e_pos, "e_pivot")
-
-b_pivot = Pivot(name="b_pivot")
-c_pivot = Pivot(name="c_pivot")
-d_pivot = Pivot(name="d_pivot")
-
-ab_edge = Edge(length=20, name="ab_edge")
-bc_edge = Edge(length=20, name="bc_edge")
-cd_edge = Edge(length=20, name="ab_edge")
-de_edge = Edge(length=20, name="de_edge")
-
-pivots = [a_pivot, b_pivot, c_pivot, d_pivot, e_pivot]
-pivot_graph = BidirectedGraph(pivots)
-
-pivot_graph.connect(a_pivot, b_pivot, 20)
-pivot_graph.connect(b_pivot, c_pivot, 20)
-pivot_graph.connect(c_pivot, d_pivot, 20)
-pivot_graph.connect(d_pivot, e_pivot, 20)
-
-gv = GraphViz()
-gv.render(pivot_graph, "pivot_graph.png")
